@@ -5,7 +5,7 @@ let contador = 0
 
 botaoAdicionar.addEventListener('click', (evento) => {
     evento.preventDefault()
-    if (inputItem.value === '') {
+    if (inputItem.value == 0) {
         window.alert('Insira o nome da tarefa!')
         return
     }
@@ -47,4 +47,20 @@ botaoAdicionar.addEventListener('click', (evento) => {
     itemDaLista.appendChild(itemData)
 
     listaDeCompras.appendChild(itemDaLista)
+
+    inputItem.value = ' '
+
+    verificarListaVazia()
 })
+
+const mensagemListaVazia = document.querySelector('p.mensagem-lista-vazia')
+function verificarListaVazia() {
+    const itensDaLista = listaDeCompras.querySelectorAll('li')
+    if (itensDaLista.length === 0) {
+        mensagemListaVazia.style.display = 'block'
+    } else {
+        mensagemListaVazia.style.display = 'none'
+    }
+}
+
+verificarListaVazia()
