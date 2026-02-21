@@ -105,6 +105,11 @@ ul {
     list-style-type: none;
 }
 
+ul > li {
+    margin-bottom: 12px;
+    list-style-type: none;
+}
+
 .input-checkbox {
     display: none;
 }
